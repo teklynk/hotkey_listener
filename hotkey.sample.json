@@ -1,0 +1,22 @@
+[
+  {
+    "keys": ["cmd", "alt", "3"],
+    "command": "bash /home/user/scripts/myscript1.sh"
+  },
+  {
+    "keys": ["cmd", "alt", "1"],
+    "command": "bash /home/user/scripts/myscript2.sh"
+  },
+  {
+    "keys": ["cmd", "alt", "2"],
+    "command": "bash /home/user/scripts/myscript3.sh"
+  },
+  {
+    "keys": ["cmd", "alt", "t"],
+    "command": "tilix --quake"
+  },
+  {
+    "keys": ["cmd", "alt", "x"],
+    "command": "xkill"
+  }
+]
