@@ -3,6 +3,9 @@
 play /usr/share/mint-artwork/sounds/plug.oga
 notify-send "Hotkey listener running..."
 
+# kill the script if it is already running
+pkill -f hotkey_listener.py
+
 # Activate venv
 source /home/user/scripts/hotkey/.venv/bin/activate
 
