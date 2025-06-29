@@ -2,6 +2,7 @@ import json
 import subprocess
 from pynput import keyboard
 
+# Path to JSON config file. This needs to be the absolute path.
 HOTKEY_CONFIG = "/home/rjones/scripts/hotkey/hotkey.json"
 
 # Map string keys to pynput Key or KeyCode
