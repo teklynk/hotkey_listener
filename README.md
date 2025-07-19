@@ -1,35 +1,52 @@
+# What is this?
+Hotkey Listener is a python service script that listens for key combinations and executes commands and scripts.
+
+# Example use cases:
+
+- Start and stop a docker container with a key combination
+- Shutdown your computer with a key combination
+- Open a terminal with a key combination  
+- Open a web browser with a key combination
+- Mute your microphone with a key combination
+- Toggle bluetooth with a key combination
+- Switch audo sources with a key combination
+
+If you can script it, then you can run it with a keyboard shortcut.
 
 # 🧠 Step-by-Step Usage
 
 ## ✅ 1. Install Dependencies (in venv)
 ```bash
-cd ~/hotkey
+cd ~/hotkey_listener
 source .venv/bin/activate
 pip install pynput
 ```
 
 ## ✅ 2. Add a Launcher Script: run.sh
-This ensures the virtual environment is activated when running the listener:
-```bash
-#!/bin/bash
-# run.sh
+This ensures the python virtual environment is activated when running the listener:
 
-DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-source "$DIR/.venv/bin/activate"
-python "$DIR/hotkey_listener.py"
-```
+Rename `run.sample.sh` to `run.sh`
+
+Open `run.sh` in a text editor and modify the paths for your environment.
+
 Make it executable:
 ```bash
 chmod +x run.sh
 ```
 
-## ✅ 3. Optional: Config-Based Hotkeys (hotkeys.json)
+## ✅ 3. Config-Based Hotkeys (hotkey.json)
+Rename `hotkey.sample.json` to `hotkey.json`
+
+Open `hotkey.json` in a text editor and add commands as needed. As you can see, you can execute bash scripts or open programs using a hotkey/key combination.
+
+`scripts/` directory has some sample bash scripts that you can modfiy or use your own bash scripts. 
+
 You can define hotkeys and commands in a JSON file:
 ```json
 [
   {
     "keys": ["alt", "cmd", "4"],
-    "command": "bash ~/scripts/my_script.sh"
+    "command": "bash /home/user/my_script.sh"
   },
   {
     "keys": ["alt", "cmd", "t"],
@@ -47,11 +64,11 @@ Then modify the Python script to read this file dynamically if you'd like. I can
 ## ✅ 5. Optional: Autostart on Login (GUI Sessions)
 You can create a .desktop file to run your hotkey listener at login:
 ```ini
-# ~/.config/autostart/hotkey.desktop
+# ~/.config/autostart/hotkey_listener.desktop
 
 [Desktop Entry]
 Type=Application
-Exec=/home/youruser/hotkey/run.sh
+Exec=/home/user/scripts/hotkey_listener/run.sh
 Hidden=false
 NoDisplay=false
 X-GNOME-Autostart-enabled=true
