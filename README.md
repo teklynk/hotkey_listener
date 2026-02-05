@@ -17,16 +17,16 @@ Hotkey Listener is a python service script that listens for key combinations and
 
 If you can script it, then you can run it with a keyboard shortcut.
 
-# 🧠 Step-by-Step Usage
+# Usage
 
-## ✅ 1. Install Dependencies (in venv)
+## Install Dependencies (in venv)
 ```bash
 cd ~/hotkey_listener
 source .venv/bin/activate
 pip install pynput
 ```
 
-## ✅ 2. Add a Launcher Script: run.sh
+## Add a Launcher Script: run.sh
 This ensures the python virtual environment is activated when running the listener:
 
 Rename `run.sample.sh` to `run.sh`
@@ -38,7 +38,7 @@ Make it executable:
 chmod +x run.sh
 ```
 
-## ✅ 3. Config-Based Hotkeys (hotkey.json)
+## Config-Based Hotkeys (hotkey.json)
 Rename `hotkey.sample.json` to `hotkey.json`
 
 Open `hotkey.json` in a text editor and add commands as needed. As you can see, you can execute bash scripts or open programs using a hotkey/key combination.
@@ -60,14 +60,14 @@ You can define hotkeys and commands in a JSON file:
 ```
 Then modify the Python script to read this file dynamically if you'd like. I can help with that too.
 
-## ✅ 4. Run Script Manually
+## Run Script Manually
 ```bash
 ./run.sh
 ```
 
-## ✅ 5. Optional: Autostart on Login (GUI Sessions)
+## Optional: Autostart on Login (GUI Sessions)
 You can create a .desktop file to run your hotkey listener at login:
-```ini
+```bash
 # ~/.config/autostart/hotkey_listener.desktop
 
 [Desktop Entry]

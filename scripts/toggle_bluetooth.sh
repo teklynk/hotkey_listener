@@ -16,6 +16,3 @@ else
   play /usr/share/mint-artwork/sounds/plug.oga
   notify-send "Bluetooth enabled."
 fi
-
-# Notify blueman-manager of the change
-#blueman-manager --refresh
